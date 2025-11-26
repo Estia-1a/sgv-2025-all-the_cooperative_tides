@@ -1,0 +1,138 @@
+/* Style général et fond */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #87CEEB; /* bleu ciel */
+    overflow: hidden;
+}
+
+/* Image de fond fondu */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bidart.jpg') center/cover no-repeat;
+    opacity: 0.2; /* fondu léger */
+    z-index: -1;
+}
+
+/* Fenêtre de login */
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Titres */
+.login-container h1 {
+    margin: 0;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.login-container h2 {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Champs input */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Oeil mot de passe */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Lien mot de passe oublié */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Bouton login */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Texte bas pour créer un compte */
+.signup-text {
+    font-size: 13px;
+    color: #555;
+}
+
+.signup-text a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
