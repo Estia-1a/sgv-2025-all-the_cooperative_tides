@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #add8e6; /* bleu clair */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Remplit toute la hauteur de la page */
+    text-align: center;
+}
+
+header {
+    /* style */
+    background-color: #ee4181;
+    color: white;
+    margin-bottom: 2em;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    
+}
+
+p {
+    color: #555;
+    max-width: 600px; /* Limite la largeur pour le paragraphe */
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Conteneur des boutons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style des boutons */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 260px; /* même largeur pour tous */
+}
+
+button:hover {
+    background-color: #d0e7f9;
+}
