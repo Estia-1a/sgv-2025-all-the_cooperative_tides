@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header h2 {
+    font-size: 22px;
+}
+
+.icons-right i {
+    font-size: 22px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.profile-box {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid black;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+}
+
+.info {
+    margin-left: 15px;
+}
+
+.email {
+    margin: 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.role {
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* PHOTO DU LIVRE / BIBLIOTHÈQUE */
+.book-photo img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.menu {
+    margin-top: 30px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.item i {
+    font-size: 28px;
+    width: 40px;
+}
