@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bidartcours - Discussion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background" id="bg"></div>
+  <div class="filter"></div>
+
+  <header>Discussion - Calcul Différentiel</header>
+
+  <div class="discussion-container" id="discussionContainer">
+    <div class="message student">
+      <div class="avatar">E</div>
+      <div class="text">Bonjour professeur, je n'arrive pas à comprendre la résolution de l'équation différentielle dy/dx = y².</div>
+    </div>
+
+    <div class="message professor">
+      <div class="avatar">P</div>
+      <div class="text">Bonjour ! Pour cette équation, il s'agit d'une équation séparable. Tu peux écrire dy/y² = dx puis intégrer des deux côtés.</div>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input type="text" id="messageInput" placeholder="Tapez votre message...">
+    <button onclick="sendMessage()">Envoyer</button>
+  </div>
+
+  <div class="footer">Bidartcours - Discussion</div>
+
+  <script>
+    document.getElementById('bg').style.backgroundImage = "url('images/fond.jpg')";
+
+    function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById('discussionContainer');
+
+      // Message élève
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message student';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'avatar';
+      avatar.textContent = 'E';
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'text';
+      textDiv.textContent = text;
+
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(textDiv);
+      container.appendChild(messageDiv);
+      container.scrollTop = container.scrollHeight;
+
+      input.value = '';
+
+      // Réponse professeur simulée
+      setTimeout(() => {
+        const profMsg = document.createElement('div');
+        profMsg.className = 'message professor';
+
+        const profAvatar = document.createElement('div');
+        profAvatar.className = 'avatar';
+        profAvatar.textContent = 'P';
+
+        const profText = document.createElement('div');
+        profText.className = 'text';
+        profText.textContent = 'Merci pour votre message ! Voyons cela ensemble...';
+
+        profMsg.appendChild(profAvatar);
+        profMsg.appendChild(profText);
+        container.appendChild(profMsg);
+        container.scrollTop = container.scrollHeight;
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
