@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bidartcours - Accueil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background image + blue filter */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      opacity: 0.7; /* fondu */
+    }
+
+    .filter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(135, 206, 250, 0.45); /* filtre bleu ciel */
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .sections {
+      width: 90%;
+      max-width: 900px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle {
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    a {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background elements -->
+  <div class="background" id="bg"></div>
+  <div class="filter"></div>
+
+  <!-- Header -->
+  <header>Bidartcours</header>
+
+  <!-- Main sections -->
+  <div class="sections">
+    <div class="card" onclick="location.href='cours.html'">
+      <img src="placeholder.png" alt="Cours" />
+      <div>
+        <h2>Cours</h2>
+        <p>Consultez tous vos cours organisés par matière.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="location.href='discussion.html'">
+      <img src="placeholder.png" alt="Discussion" />
+      <div>
+        <h2>Discuter en ligne</h2>
+        <p>Echangez avec vos professeurs rapidement.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="location.href='liens.html'">
+      <img src="placeholder.png" alt="Liens utiles" />
+      <div>
+        <h2>Liens utiles</h2>
+        <p>Accédez aux ressources importantes.</p>
+      </div>
+    </div>
+
+    <div class="card" onclick="location.href='annales.html'">
+      <img src="placeholder.png" alt="Annales" />
+      <div>
+        <h2>Annales</h2>
+        <p>Entraînez-vous avec les sujets des années précédentes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="theme-toggle" style="position: fixed; bottom: 20px; left: 20px;">Changer thème : clair / sombre</div>
+    <a href="aide.html" style="position: fixed; bottom: 20px; right: 20px;">Besoin d'aide ?</a>
+  </div>
+    <a href="aide.html">Besoin d'aide ?</a>
+  </div>
+
+  <script>
+    // Theme toggle
+    let dark = true;
+
+    function toggleTheme() {
+      dark = !dark;
+      if (!dark) {
+        document.body.style.color = '#000';
+        document.querySelectorAll('.card').forEach(c => c.style.background = 'rgba(255,255,255,0.6)');
+      } else {
+        document.body.style.color = '#fff';
+        document.querySelectorAll('.card').forEach(c => c.style.background = 'rgba(0,0,0,0.4)');
+      }
+    }
+
+    // Placeholder background — to replace by your image
+    document.getElementById('bg').style.backgroundImage = "url('fond.jpg')";
+  </script>
+</body>
+</html>
