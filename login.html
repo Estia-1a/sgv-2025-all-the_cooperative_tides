@@ -1,9 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Contact</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidartcours - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Page Contact</h1>
+    <div class="background"></div>
+
+    <div class="login-container">
+        <h1>Bidartcours</h1>
+        <h2>Bienvenue</h2>
+
+        <form>
+            <div class="input-group">
+                <input type="text" id="username" required>
+                <label for="username">Identifiant</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" required>
+                <label for="password">Mot de passe</label>
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <p class="signup-text">
+            Nouveau sur Bidartcours ?  <a href="#">Créer un compte</a>
+        </p>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const pwd = document.getElementById('password');
+            if (pwd.type === "password") {
+                pwd.type = "text";
+            } else {
+                pwd.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
