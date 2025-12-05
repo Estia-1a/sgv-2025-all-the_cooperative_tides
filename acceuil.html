@@ -1,169 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bidartcours - Accueil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Bidartcours</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #ffffff;
-      position: relative;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* Background image + blue filter */
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .progress-bar-bg {
+      background: rgba(255, 255, 255, 0.1);
+      height: 6px;
+      border-radius: 3px;
+      margin-top: 12px;
       width: 100%;
+    }
+
+    .progress-bar-fill {
+      background: var(--accent);
       height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-      opacity: 0.7; /* fondu */
+      border-radius: 3px;
     }
 
-    .filter {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(135, 206, 250, 0.45); /* filtre bleu ciel */
-      z-index: -1;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 20px;
-      font-size: 3rem;
-      font-weight: bold;
-      text-shadow: 0 0 10px #000;
-    }
-
-    .sections {
-      width: 90%;
-      max-width: 900px;
-      margin: 50px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .card {
-      display: flex;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-right: 20px;
-    }
-
-    .footer {
+    .badge {
       position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .theme-toggle {
-      margin-bottom: 10px;
-      cursor: pointer;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 0.75rem;
       font-weight: bold;
-      text-decoration: underline;
-    }
-
-    a {
-      color: #fff;
     }
   </style>
 </head>
+
 <body>
-  <!-- Background elements -->
-  <div class="background" id="bg"></div>
-  <div class="filter"></div>
-
-  <!-- Header -->
-  <header>Bidartcours</header>
-
-  <!-- Main sections -->
-  <div class="sections">
-    <div class="card" onclick="location.href='cours.html'">
-      <img src="styles/bouquins.jpg" alt="Cours" />
-      <div>
-        <h2>Cours</h2>
-        <p>Accédez ici aux différentes matières et chapitres proposés, à tout moment.</p>
-      </div>
+  <header>
+    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
+    <nav style="display: flex; gap: 20px;">
+      <a href="acceuil.html" style="color: white; border-bottom: 2px solid var(--primary);">Accueil</a>
+      <a href="cours.html">Mes Cours</a>
+      <a href="discussion.html">Discussion</a>
+      <a href="#" style="color: var(--text-muted);">Profil</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
+      <div
+        style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+        M</div>
     </div>
+  </header>
 
-    <div class="card" onclick="location.href='discussion.html'">
-      <img src="styles/disussion.jpg" alt="Discussion" />
-      <div>
-        <h2>Discussion</h2>
-        <p>Accédez ici au répertoire de professeurs disponibles afin de discuter en ligne. Soyez courtois et respectueux. </p>
+  <div class="container">
+    <h1>Mon Espace de Travail</h1>
+    <p style="color: var(--text-muted); margin-bottom: 40px;">Continuez votre apprentissage là où vous vous êtes arrêté.
+    </p>
+
+    <div class="grid">
+      <!-- Cours Card -->
+      <div class="card course-card" onclick="location.href='cours.html'">
+        <div class="badge">Nouveau</div>
+        <img src="styles/bouquins.jpg" alt="Cours">
+        <div>
+          <h2>Mes Cours</h2>
+          <p>Accédez aux chapitres et leçons. Mathématiques, Physique, Info...</p>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" style="width: 65%;"></div>
+          </div>
+          <p style="font-size: 0.8rem; margin-top: 4px; color: var(--accent);">65% Complété</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card" onclick="location.href='liens.html'">
-      <img src="styles/ampoule.jpg" alt="Liens utiles" />
-      <div>
-        <h2>Liens utiles</h2>
-        <p>Accédez aux ressources importantes.</p>
+      <!-- Discussion Card -->
+      <div class="card course-card" onclick="location.href='discussion.html'">
+        <img src="styles/disussion.jpg" alt="Discussion">
+        <div>
+          <h2>Discussion</h2>
+          <p>Échangez avec vos professeurs et camarades en temps réel.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card" onclick="location.href='annales.html'">
-      <img src="styles/haltere.jpg" alt="Annales" />
-      <div>
-        <h2>Annales</h2>
-        <p>Entraînez-vous avec les sujets des années précédentes.</p>
+      <!-- Liens Card -->
+      <div class="card course-card" onclick="location.href='liens.html'">
+        <img src="styles/ampoule.jpg" alt="Liens">
+        <div>
+          <h2>Ressources</h2>
+          <p>Liens utiles et documents de référence pour vos projets.</p>
+        </div>
+      </div>
+
+      <!-- Annales Card -->
+      <div class="card course-card" onclick="location.href='annales.html'">
+        <div class="badge" style="background: var(--secondary);">Premium</div>
+        <img src="styles/haltere.jpg" alt="Annales">
+        <div>
+          <h2>Annales</h2>
+          <p>Entraînez-vous sur les sujets d'examens précédents.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <div class="theme-toggle" style="position: fixed; bottom: 20px; left: 20px;">Changer thème : clair / sombre</div>
-    <a href="aide.html" style="position: fixed; bottom: 20px; right: 20px;">Besoin d'aide ?</a>
-  </div>
-    <a href="aide.html">Besoin d'aide ?</a>
-  </div>
-
-  <script>
-    // Theme toggle
-    let dark = true;
-
-    function toggleTheme() {
-      dark = !dark;
-      if (!dark) {
-        document.body.style.color = '#000';
-        document.querySelectorAll('.card').forEach(c => c.style.background = 'rgba(255,255,255,0.6)');
-      } else {
-        document.body.style.color = '#fff';
-        document.querySelectorAll('.card').forEach(c => c.style.background = 'rgba(0,0,0,0.4)');
-      }
-    }
-
-    // Placeholder background — to replace by your image
-    document.getElementById('bg').style.backgroundImage = "url('styles/bidart-vue-aerienne-c-ph.jpg')";
-  </script>
 </body>
+
 </html>

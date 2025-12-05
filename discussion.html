@@ -1,209 +1,141 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bidartcours - Discussion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion - Bidartcours</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background-color: #1e1e1e;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-      opacity: 0.7;
-    }
-
-    .filter {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(135, 206, 250, 0.25);
-      z-index: -1;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 0 0 10px #000;
-    }
-
-    .discussion-container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      overflow-y: auto;
-      height: 60vh;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 12px;
-      background: rgba(0,0,0,0.3);
-    }
-
-    .message {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .message.student {
-      flex-direction: row-reverse;
-    }
-
-    .message .avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .message .text {
-      max-width: 600px;
-      background: rgba(0,0,0,0.5);
-      padding: 12px 16px;
-      border-radius: 12px;
-      word-wrap: break-word;
-    }
-
-    .message.professor .text {
-      background: rgba(70,130,180,0.7);
-    }
-
-    .message.student .text {
-      background: rgba(46,139,87,0.7);
-    }
-
-    .input-container {
-      max-width: 800px;
-      margin: 10px auto;
-      display: flex;
-      gap: 10px;
-    }
-
-    .input-container input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 12px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    .input-container button {
-      padding: 10px 20px;
-      border-radius: 12px;
-      border: none;
-      background-color: #4682b4;
-      color: #fff;
+    .channel-item {
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 1rem;
+      transition: var(--transition);
+      color: var(--text-muted);
     }
 
-    .footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    .channel-item:hover,
+    .channel-item.active {
+      background: rgba(14, 165, 233, 0.1);
+      color: var(--primary);
+    }
+
+    .channel-item.active {
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
+    <nav style="display: flex; gap: 20px;">
+      <a href="acceuil.html">Accueil</a>
+      <a href="cours.html">Mes Cours</a>
+      <a href="discussion.html" style="color: white; border-bottom: 2px solid var(--primary);">Discussion</a>
+      <a href="#" style="color: var(--text-muted);">Profil</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
+      <div
+        style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+        M</div>
+    </div>
+  </header>
 
-  <div class="background" id="bg"></div>
-  <div class="filter"></div>
+  <div class="container chat-layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Canaux</h3>
+      <div class="channel-item active"># Calcul Différentiel</div>
+      <div class="channel-item"># Physique Mécanique</div>
+      <div class="channel-item"># Informatique 101</div>
+      <div class="channel-item"># Général</div>
 
-  <header>Discussion - Calcul Différentiel</header>
-
-  <div class="discussion-container" id="discussionContainer">
-    <div class="message student">
-      <div class="avatar">E</div>
-      <div class="text">Bonjour professeur, je n'arrive pas à comprendre la résolution de l'équation différentielle dy/dx = y².</div>
+      <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 1.2rem;">Professeurs</h3>
+      <div class="channel-item" style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e;"></div> Prof. Dupont
+      </div>
+      <div class="channel-item" style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted);"></div> Prof. Martin
+      </div>
     </div>
 
-    <div class="message professor">
-      <div class="avatar">P</div>
-      <div class="text">Bonjour ,Pour cette équation, il s'agit d'une équation séparable. Tu peux écrire dy/y² = dx puis intégrer des deux côtés.</div>
+    <!-- Chat Area -->
+    <div class="chat-area">
+      <div
+        style="padding: 16px 24px; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h2 style="font-size: 1.2rem; margin: 0;">Calcul Différentiel</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">24 étudiants, 1 professeur en ligne</span>
+        </div>
+        <div style="color: var(--text-muted); cursor: pointer;">ℹ️</div>
+      </div>
+
+      <div class="messages" id="discussionContainer">
+        <div class="message student">
+          <div class="bubble">Bonjour professeur, je n'arrive pas à comprendre la résolution de l'équation
+            différentielle dy/dx = y².</div>
+        </div>
+
+        <div class="message professor">
+          <div class="bubble">Bonjour, pour cette équation, il s'agit d'une équation séparable. Tu peux écrire dy/y² =
+            dx puis intégrer des deux côtés.</div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="messageInput" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()" style="padding: 12px 20px;">Envoyer</button>
+      </div>
     </div>
   </div>
-
-  <div class="input-container">
-    <input type="text" id="messageInput" placeholder="Tapez votre message...">
-    <button onclick="sendMessage()">Envoyer</button>
-  </div>
-
-  <div class="footer">Bidartcours - Discussion</div>
 
   <script>
-    document.getElementById('bg').style.backgroundImage = "url('styles/bidart-vue-aerienne-c-ph.jpg')";
+    function handleKeyPress(e) {
+      if (e.key === 'Enter') sendMessage();
+    }
 
     function sendMessage() {
       const input = document.getElementById('messageInput');
       const text = input.value.trim();
-      if(text === '') return;
+      if (text === '') return;
 
       const container = document.getElementById('discussionContainer');
 
-      // Créer le message élève
+      // Message étudiant
       const messageDiv = document.createElement('div');
       messageDiv.className = 'message student';
 
-      const avatar = document.createElement('div');
-      avatar.className = 'avatar';
-      avatar.textContent = 'E';
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.textContent = text;
 
-      const textDiv = document.createElement('div');
-      textDiv.className = 'text';
-      textDiv.textContent = text;
-
-      messageDiv.appendChild(avatar);
-      messageDiv.appendChild(textDiv);
+      messageDiv.appendChild(bubble);
       container.appendChild(messageDiv);
 
-      // Simuler réponse du professeur après 1.5s
+      // Scroll to bottom
+      container.scrollTop = container.scrollHeight;
+
+      // Simuler réponse
       setTimeout(() => {
         const profMsg = document.createElement('div');
         profMsg.className = 'message professor';
 
-        const profAvatar = document.createElement('div');
-        profAvatar.className = 'avatar';
-        profAvatar.textContent = 'P';
+        const profBubble = document.createElement('div');
+        profBubble.className = 'bubble';
+        profBubble.textContent = 'Merci pour ta question ! Un professeur va te répondre sous peu.';
 
-        const profText = document.createElement('div');
-        profText.className = 'text';
-        profText.textContent = 'Merci pour votre message ! Voyons cela ensemble...';
-
-        profMsg.appendChild(profAvatar);
-        profMsg.appendChild(profText);
+        profMsg.appendChild(profBubble);
         container.appendChild(profMsg);
-
         container.scrollTop = container.scrollHeight;
-      }, 1500);
+      }, 1000);
 
       input.value = '';
-      container.scrollTop = container.scrollHeight;
     }
   </script>
-
 </body>
+
 </html>
