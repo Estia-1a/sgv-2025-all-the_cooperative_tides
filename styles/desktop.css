@@ -1,18 +1,24 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #add8e6; /* bleu clair */
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Remplit toute la hauteur de la page */
+    height: 100vh;
     text-align: center;
+
+    /* IMAGE DE FOND */
+    background-image: url("Image.jpg"); /* change le nom si besoin */
+    background-size: cover;        /* couvre tout l'écran */
+    background-position: center;   /* centre l'image */
+    background-repeat: no-repeat;  /* pas de répétition */
+    background-attachment: fixed;  /* effet de fond fixe (optionnel) */
 }
 
+/* En-tête */
 header {
-    /* style */
     background-color: #ee4181;
     color: white;
     margin-bottom: 2em;
@@ -20,17 +26,18 @@ header {
 
 h1 {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 4px;
     color: #333;
-    
+    font-size: 3rem; /* grossit le texte */
+    font-weight: bold;
 }
 
 p {
-    color: #555;
-    max-width: 600px; /* Limite la largeur pour le paragraphe */
+    color: #564f4f;
+    max-width: 600px;
     line-height: 1.5;
     text-align: center;
+    font-size: 1.4rem;      /* Taille du paragraphe — un peu plus grande */
 }
 
 /* Conteneur des boutons */
@@ -40,16 +47,16 @@ p {
     gap: 10px;
 }
 
-/* Style des boutons */
+/* Boutons */
 button {
     padding: 12px 20px;
     font-size: 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #ffffffa0;
     cursor: pointer;
     transition: background-color 0.2s;
-    width: 260px; /* même largeur pour tous */
+    width: 260px;
 }
 
 button:hover {
