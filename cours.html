@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Cours - Bidartcours</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-container {
+            margin-top: 15px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .progress-bar-bg {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .course-meta {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
+        <nav style="display: flex; gap: 20px;">
+            <a href="acceuil.html">Accueil</a>
+            <a href="cours.html" style="color: white; border-bottom: 2px solid var(--primary);">Mes Cours</a>
+            <a href="discussion.html">Discussion</a>
+            <a href="#" style="color: var(--text-muted);">Profil</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
+            <div
+                style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                M</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h1>Mes Cours</h1>
+            <div style="background: var(--bg-input); padding: 8px 16px; border-radius: 12px; font-size: 0.9rem;">
+                🔍 Rechercher un cours...
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Course 1 -->
+            <div class="card course-card" onclick="location.href='cours-details.html'">
+                <img src="styles/bouquins.jpg" alt="Maths">
+                <div>
+                    <h2 style="font-size: 1.4rem;">Mathématiques Avancées</h2>
+                    <p>Prof. Dupont • Semestre 1</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item">⏱️ 12h restants</div>
+                        <div class="meta-item">📚 8 Chapitres</div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progression</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 65%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn"
+                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px;">Reprendre</button>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="card course-card" onclick="location.href='cours-details.html'">
+                <img src="styles/bouquins.jpg" alt="Physique"> <!-- Placeholder img -->
+                <div>
+                    <h2 style="font-size: 1.4rem;">Physique Mécanique</h2>
+                    <p>Prof. Martin • Semestre 1</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item">⏱️ 4h restants</div>
+                        <div class="meta-item">📚 5 Chapitres</div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Progression</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 30%; background: var(--accent);"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn"
+                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px;">Reprendre</button>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="card course-card" onclick="location.href='cours-details.html'">
+                <img src="styles/ampoule.jpg" alt="Info"> <!-- Placeholder img -->
+                <div>
+                    <h2 style="font-size: 1.4rem;">Introduction Python</h2>
+                    <p>Prof. Alan • Semestre 2</p>
+
+                    <div class="course-meta">
+                        <div class="meta-item">⏱️ Débutant</div>
+                        <div class="meta-item">📚 12 Chapitres</div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-text">
+                            <span>Non commencé</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 0%; background: var(--text-muted);"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn"
+                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px; background: var(--bg-input);">Commencer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
