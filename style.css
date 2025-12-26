@@ -1,142 +1,339 @@
-/* Style général et fond */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #87CEEB; /* bleu ciel */
-    overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700&display=swap');
+
+:root {
+    /* Color Palette - Ocean & Tech Theme */
+    --primary: #0ea5e9;
+    /* Sky 500 */
+    --primary-dark: #0284c7;
+    /* Sky 600 */
+    --secondary: #6366f1;
+    /* Indigo 500 */
+    --accent: #f59e0b;
+    /* Amber 500 */
+
+    --bg-dark: #0f172a;
+    /* Slate 900 */
+    --bg-card: rgba(30, 41, 59, 0.7);
+    /* Slate 800 with opacity */
+    --bg-input: rgba(51, 65, 85, 0.5);
+
+    --text-main: #f8fafc;
+    /* Slate 50 */
+    --text-muted: #94a3b8;
+    /* Slate 400 */
+
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    --radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Image de fond fondu */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Dynamic Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 40%);
+    z-index: -2;
+    pointer-events: none;
+}
+
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('') center/cover no-repeat;
-    background: url('') center/cover no-repeat;
-    opacity: 0.2; /* fondu léger */
-    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -3;
+    filter: blur(2px) grayscale(30%);
 }
 
-/* Fenêtre de login */
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Components */
+
+/* Glass Card */
+.card,
+.login-container,
+.discussion-container,
+header {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: var(--glass-shadow);
+}
+
+/* Buttons */
+.btn,
+.login-button,
+button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn:hover,
+.login-button:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    filter: brightness(110%);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--bg-input);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    background: rgba(51, 65, 85, 0.8);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+/* Navbar / Header */
+header {
+    margin: 20px;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific Page Overrides to match new design system */
+
+/* Login Specifics */
+.login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    width: 350px;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
     text-align: center;
 }
 
-/* Titres */
 .login-container h1 {
-    margin: 0;
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.login-container h2 {
-    margin: 0;
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-/* Champs input */
 .input-group {
+    margin-bottom: 20px;
     position: relative;
-    margin-bottom: 25px;
-}
-
-.input-group input {
-    width: 80%;           /* largeur réduite */
-    max-width: 300px;     /* largeur maximale */
-    padding: 12px 40px 12px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-    display: block;       /* permet de centrer avec margin */
-    margin: 0 auto;       /* centre horizontalement */
+    text-align: left;
 }
 
 .input-group label {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    color: #888;
-    pointer-events: none;
-    transition: 0.2s ease all;
-}
-
-.input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-    top: -10px;
-    left: 8px;
-    font-size: 12px;
-    color: #555;
-}
-
-/* Oeil mot de passe */
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Lien mot de passe oublié */
-.forgot-password {
     display: block;
-    text-align: right;
-    font-size: 12px;
-    color: #007BFF;
-    text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
 }
 
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Bouton login */
-.login-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
+/* Dashboard / Accueil Specifics */
+.course-card {
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    transition: var(--transition);
+    overflow: hidden;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
-.login-button:hover {
-    background-color: #0056b3;
+.course-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.9);
 }
 
-/* Texte bas pour créer un compte */
-.signup-text {
-    font-size: 13px;
-    color: #555;
+.course-card img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
 }
 
-.signup-text a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+.course-card h2 {
+    font-size: 1.25rem;
+    margin: 0;
 }
 
-.signup-text a:hover {
-    text-decoration: underline;
+.course-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Discussion Specifics */
+.chat-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    height: calc(100vh - 140px);
+}
+
+.sidebar {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.messages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.message {
+    display: flex;
+    gap: 12px;
+    max-width: 80%;
+}
+
+.message.student {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message .bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.message.professor .bubble {
+    background: rgba(51, 65, 85, 0.8);
+    border-top-left-radius: 4px;
+}
+
+.message.student .bubble {
+    background: var(--primary);
+    border-top-right-radius: 4px;
+    color: white;
+}
+
+.chat-input-area {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 12px;
 }
