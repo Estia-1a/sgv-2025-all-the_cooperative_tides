@@ -1,0 +1,223 @@
+/* Landing Page Specific Styles */
+
+/* Hero Section */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ffffff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 41, 59, 0.9);
+    box-shadow: var(--glass-shadow);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin: 80px 0 40px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+/* Buttons Overrides/Extras */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Utility / Extracted Inline Styles */
+.logo-container {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo-accent {
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.card-link {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.feature-desc {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Community Section */
+.community-section {
+    margin-top: 80px;
+}
+
+.community-card-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.community-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.community-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.community-desc {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.community-visual {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-mockup {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.chat-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.chat-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.avatar-e {
+    width: 40px;
+    height: 40px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.avatar-p {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chat-bubble-gray {
+    background: var(--bg-input);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.chat-bubble-blue {
+    background: rgba(14, 165, 233, 0.2);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* Footer structure */
+footer {
+    margin-top: 100px;
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-link {
+    color: var(--text-muted);
+}

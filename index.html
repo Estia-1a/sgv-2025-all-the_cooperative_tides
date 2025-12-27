@@ -6,104 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bidartcours - L'Excellence à l'ESTIA</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Landing Specific Styles */
-        .hero {
-            padding: 100px 20px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            background: linear-gradient(to right, #ffffff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: rgba(14, 165, 233, 0.1);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .section-title {
-            text-align: center;
-            margin: 80px 0 40px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--glass-border);
-            border-radius: var(--radius);
-            padding: 30px;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 41, 59, 0.9);
-            box-shadow: var(--glass-shadow);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 12px;
-        }
-
-        footer {
-            margin-top: 100px;
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-muted);
-        }
-    </style>
+    <link rel="stylesheet" href="styles/landing.css">
 </head>
 
 <body>
 
     <!-- Header / Nav -->
     <header>
-        <div style="font-size: 1.8rem; font-weight: 700; color: white;">
-            Bidart<span style="color: var(--primary);">cours</span>
+        <div class="logo-container">
+            Bidart<span class="logo-accent">cours</span>
         </div>
-        <div style="display: flex; gap: 16px;">
-            <a href="login.html" class="btn" style="text-decoration: none;">Se connecter</a>
+        <div class="header-actions">
+            <a href="login.html" class="btn no-decoration">Se connecter</a>
         </div>
     </header>
 
@@ -113,8 +27,8 @@
         <p>La plateforme éducative officielle pour les étudiants de l'ESTIA et de la région de Bidart. Accédez à des
             cours interactifs, discutez avec vos mentors et réussissez vos examens.</p>
         <div class="hero-buttons">
-            <a href="login.html" class="btn" style="text-decoration: none;">Commencer maintenant</a>
-            <a href="#courses" class="btn btn-outline" style="text-decoration: none;">Voir les cours</a>
+            <a href="login.html" class="btn no-decoration">Commencer maintenant</a>
+            <a href="#courses" class="btn btn-outline no-decoration">Voir les cours</a>
         </div>
     </div>
 
@@ -130,11 +44,11 @@
             <div class="feature-card">
                 <div class="feature-icon">📐</div>
                 <h3>Mathématiques Avancées</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                <p class="feature-desc">
                     Calcul différentiel, algèbre linéaire et probabilités. Maîtrisez les fondements théoriques
                     nécessaires pour l'ingénierie.
                 </p>
-                <a href="login.html" style="font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                <a href="login.html" class="card-link">
                     En savoir plus <span>→</span>
                 </a>
             </div>
@@ -143,10 +57,10 @@
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>Physique & Mécanique</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                <p class="feature-desc">
                     De la thermodynamique à la mécanique des fluides. Des cours interactifs avec exercices corrigés.
                 </p>
-                <a href="login.html" style="font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                <a href="login.html" class="card-link">
                     En savoir plus <span>→</span>
                 </a>
             </div>
@@ -155,10 +69,10 @@
             <div class="feature-card">
                 <div class="feature-icon">💻</div>
                 <h3>Informatique & Data</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                <p class="feature-desc">
                     Programmation Python, Java, et Web. Apprenez à coder et à gérer des bases de données modernes.
                 </p>
-                <a href="login.html" style="font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                <a href="login.html" class="card-link">
                     En savoir plus <span>→</span>
                 </a>
             </div>
@@ -166,34 +80,26 @@
     </div>
 
     <!-- Community Section -->
-    <div class="container" style="margin-top: 80px;">
-        <div class="feature-card"
-            style="display: flex; align-items: center; gap: 40px; padding: 50px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 style="font-size: 2rem; margin-bottom: 15px;">Une Communauté Active</h2>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">
+    <div class="container community-section">
+        <div class="feature-card community-card-layout">
+            <div class="community-text">
+                <h2 class="community-title">Une Communauté Active</h2>
+                <p class="community-desc">
                     Rejoignez les discussions en direct, posez vos questions aux professeurs et collaborez avec d'autres
                     étudiants de Bidart.
                 </p>
-                <a href="login.html" class="btn" style="text-decoration: none;">Rejoindre la discussion</a>
+                <a href="login.html" class="btn no-decoration">Rejoindre la discussion</a>
             </div>
-            <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-                <div
-                    style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 16px; width: 100%; max-width: 400px;">
-                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                        <div
-                            style="width: 40px; height: 40px; background: #22c55e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                            E</div>
-                        <div
-                            style="background: var(--bg-input); padding: 10px; border-radius: 12px; font-size: 0.9rem;">
+            <div class="community-visual">
+                <div class="chat-mockup">
+                    <div class="chat-row">
+                        <div class="avatar-e">E</div>
+                        <div class="chat-bubble-gray">
                             Comment résoudre cet exercice de thermo ?</div>
                     </div>
-                    <div style="display: flex; gap: 10px; flex-direction: row-reverse;">
-                        <div
-                            style="width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                            P</div>
-                        <div
-                            style="background: rgba(14, 165, 233, 0.2); padding: 10px; border-radius: 12px; font-size: 0.9rem;">
+                    <div class="chat-row reverse">
+                        <div class="avatar-p">P</div>
+                        <div class="chat-bubble-blue">
                             Regarde le chapitre 3, slide 12 !</div>
                     </div>
                 </div>
@@ -204,10 +110,10 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Bidartcours - ESTIA. Tous droits réservés.</p>
-        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px;">
-            <a href="#" style="color: var(--text-muted);">Mentions Légales</a>
-            <a href="#" style="color: var(--text-muted);">Confidentialité</a>
-            <a href="#" style="color: var(--text-muted);">Contact</a>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Mentions Légales</a>
+            <a href="#" class="footer-link">Confidentialité</a>
+            <a href="#" class="footer-link">Contact</a>
         </div>
     </footer>
 
