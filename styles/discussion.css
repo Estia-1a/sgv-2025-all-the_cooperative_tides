@@ -1,0 +1,81 @@
+/* Discussion Page Styles */
+
+/* Sidebar */
+.channel-list-title {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.channel-list-title-secondary {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.channel-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-muted);
+}
+
+.channel-item:hover,
+.channel-item.active {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--primary);
+}
+
+.channel-item.active {
+    font-weight: bold;
+}
+
+.prof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.bg-green {
+    background: #22c55e;
+}
+
+.bg-muted {
+    background: var(--text-muted);
+}
+
+/* Chat Area Header */
+.chat-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.chat-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.chat-info-btn {
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+/* Chat Input */
+.btn-send {
+    padding: 12px 20px;
+}

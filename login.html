@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Bidartcours</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 
 <body class="login-page">
     <div class="login-container">
         <h1>Bidartcours</h1>
-        <p style="color: var(--text-muted); margin-bottom: 30px;">Plateforme d'éducation interactive</p>
+        <p class="login-subtitle">Plateforme d'éducation interactive</p>
 
         <form action="acceuil.html"> <!-- Auto-redirect for demo -->
             <div class="input-group">
@@ -21,25 +22,24 @@
 
             <div class="input-group">
                 <label for="password">Mot de passe</label>
-                <div style="position: relative;">
+                <div class="password-box">
                     <input type="password" id="password" placeholder="••••••••" required>
-                    <span class="toggle-password" onclick="togglePassword()"
-                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; opacity: 0.7;">👁️</span>
+                    <span class="password-toggle" onclick="togglePassword()">👁️</span>
                 </div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
-                    <input type="checkbox" style="width: auto;"> Se souvenir de moi
+            <div class="options-row">
+                <label class="checkbox-label">
+                    <input type="checkbox" class="checkbox-input"> Se souvenir de moi
                 </label>
-                <a href="#" style="font-size: 0.9rem;">Mot de passe oublié ?</a>
+                <a href="#" class="link-sm">Mot de passe oublié ?</a>
             </div>
 
             <button type="submit" class="login-button">Se connecter</button>
         </form>
 
-        <p style="margin-top: 24px; font-size: 0.9rem; color: var(--text-muted);">
-            Pas encore de compte ? <a href="#" style="font-weight: 600;">S'inscrire</a>
+        <p class="login-footer">
+            Pas encore de compte ? <a href="#" class="link-bold">S'inscrire</a>
         </p>
     </div>
 

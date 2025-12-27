@@ -6,129 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails du Cours - Bidartcours</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .course-layout {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 30px;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: black;
-            border-radius: var(--radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .video-placeholder::before {
-            content: '▶';
-            font-size: 3rem;
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .video-placeholder:hover::before {
-            transform: scale(1.1);
-            background: var(--primary);
-        }
-
-        .chapter-list {
-            background: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-
-        .chapter-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px;
-            border-bottom: 1px solid var(--glass-border);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .chapter-item:last-child {
-            border-bottom: none;
-        }
-
-        .chapter-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .chapter-item.active {
-            background: rgba(14, 165, 233, 0.1);
-            border-left: 3px solid var(--primary);
-        }
-
-        .status-icon {
-            font-size: 1.2rem;
-        }
-
-        .locked {
-            color: var(--text-muted);
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .tab-menu {
-            display: flex;
-            gap: 24px;
-            border-bottom: 1px solid var(--glass-border);
-            margin-bottom: 24px;
-        }
-
-        .tab-item {
-            padding-bottom: 12px;
-            cursor: pointer;
-            color: var(--text-muted);
-            border-bottom: 2px solid transparent;
-        }
-
-        .tab-item.active {
-            color: var(--primary);
-            border-color: var(--primary);
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/courses.css">
 </head>
 
 <body>
     <header>
-        <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
-        <nav style="display: flex; gap: 20px;">
-            <a href="acceuil.html">Accueil</a>
-            <a href="cours.html" style="color: white; border-bottom: 2px solid var(--primary);">Mes Cours</a>
-            <a href="discussion.html">Discussion</a>
+        <div class="header-logo">Bidartcours</div>
+        <nav class="header-nav">
+            <a href="acceuil.html" class="nav-link">Accueil</a>
+            <a href="cours.html" class="nav-link active">Mes Cours</a>
+            <a href="discussion.html" class="nav-link">Discussion</a>
         </nav>
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
-            <div
-                style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                M</div>
+        <div class="user-profile">
+            <span class="user-name">Mamefatou</span>
+            <div class="user-avatar">M</div>
         </div>
     </header>
 
     <div class="container">
-        <div style="margin-bottom: 24px;">
-            <a href="cours.html" style="color: var(--text-muted); font-size: 0.9rem;">← Retour aux cours</a>
-            <h1 style="margin-top: 10px;">Mathématiques Avancées</h1>
-            <p style="color: var(--text-muted);">Chapitre 3 : Les Équations Différentielles</p>
+        <div class="course-detail-header">
+            <a href="cours.html" class="back-link">← Retour aux cours</a>
+            <h1>Mathématiques Avancées</h1>
+            <p class="course-chapter-subtitle">Chapitre 3 : Les Équations Différentielles</p>
         </div>
 
         <div class="course-layout">
@@ -144,9 +43,9 @@
                     <div class="tab-item">Discussion</div>
                 </div>
 
-                <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius);">
+                <div class="content-box">
                     <h3>À propos de ce chapitre</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    <p class="content-desc">
                         Dans cette leçon, nous allons explorer les méthodes de résolution des équations différentielles
                         de premier ordre.
                         Préparez votre cahier et votre calculatrice !
@@ -157,44 +56,44 @@
 
             <!-- Sidebar (Chapter List) -->
             <div class="chapter-list">
-                <h3 style="margin-bottom: 20px; font-size: 1.1rem;">Contenu du cours</h3>
+                <h3 class="chapter-list-title">Contenu du cours</h3>
 
                 <div class="chapter-item">
                     <div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">1. Introduction</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">10 min</div>
+                        <div class="chapter-title">1. Introduction</div>
+                        <div class="chapter-duration">10 min</div>
                     </div>
-                    <span class="status-icon" style="color: #22c55e;">✓</span>
+                    <span class="status-icon status-done">✓</span>
                 </div>
 
                 <div class="chapter-item">
                     <div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">2. Rappels Algèbre</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">45 min</div>
+                        <div class="chapter-title">2. Rappels Algèbre</div>
+                        <div class="chapter-duration">45 min</div>
                     </div>
-                    <span class="status-icon" style="color: #22c55e;">✓</span>
+                    <span class="status-icon status-done">✓</span>
                 </div>
 
                 <div class="chapter-item active">
                     <div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">3. Équations Diff.</div>
-                        <div style="font-size: 0.8rem; color: var(--primary);">En cours</div>
+                        <div class="chapter-title">3. Équations Diff.</div>
+                        <div class="chapter-status-text">En cours</div>
                     </div>
                     <span class="status-icon">▶</span>
                 </div>
 
                 <div class="chapter-item locked">
                     <div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">4. Exercices Pratiques</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">1h 20min</div>
+                        <div class="chapter-title">4. Exercices Pratiques</div>
+                        <div class="chapter-duration">1h 20min</div>
                     </div>
                     <span class="status-icon">🔒</span>
                 </div>
 
                 <div class="chapter-item locked">
                     <div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">5. Examen Blanc</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">2h 00min</div>
+                        <div class="chapter-title">5. Examen Blanc</div>
+                        <div class="chapter-duration">2h 00min</div>
                     </div>
                     <span class="status-icon">🔒</span>
                 </div>

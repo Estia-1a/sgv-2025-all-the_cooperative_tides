@@ -6,56 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil - Bidartcours</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .progress-bar-bg {
-      background: rgba(255, 255, 255, 0.1);
-      height: 6px;
-      border-radius: 3px;
-      margin-top: 12px;
-      width: 100%;
-    }
-
-    .progress-bar-fill {
-      background: var(--accent);
-      height: 100%;
-      border-radius: 3px;
-    }
-
-    .badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--primary);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 
 <body>
   <header>
-    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
-    <nav style="display: flex; gap: 20px;">
-      <a href="acceuil.html" style="color: white; border-bottom: 2px solid var(--primary);">Accueil</a>
-      <a href="cours.html">Mes Cours</a>
-      <a href="discussion.html">Discussion</a>
-      <a href="#" style="color: var(--text-muted);">Profil</a>
+    <div class="header-logo">Bidartcours</div>
+    <nav class="header-nav">
+      <a href="acceuil.html" class="nav-link active">Accueil</a>
+      <a href="cours.html" class="nav-link">Mes Cours</a>
+      <a href="discussion.html" class="nav-link">Discussion</a>
+      <a href="#" class="nav-link">Profil</a>
     </nav>
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
-      <div
-        style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-        M</div>
+    <div class="user-profile">
+      <span class="user-name">Mamefatou</span>
+      <div class="user-avatar">M</div>
     </div>
   </header>
 
   <div class="container">
     <h1>Mon Espace de Travail</h1>
-    <p style="color: var(--text-muted); margin-bottom: 40px;">Continuez votre apprentissage là où vous vous êtes arrêté.
-    </p>
+    <p class="dashboard-subtitle">Continuez votre apprentissage là où vous vous êtes arrêté.</p>
 
     <div class="grid">
       <!-- Cours Card -->
@@ -65,10 +36,10 @@
         <div>
           <h2>Mes Cours</h2>
           <p>Accédez aux chapitres et leçons. Mathématiques, Physique, Info...</p>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: 65%;"></div>
+          <div class="dashboard-progress-bg">
+            <div class="dashboard-progress-fill" style="width: 65%;"></div>
           </div>
-          <p style="font-size: 0.8rem; margin-top: 4px; color: var(--accent);">65% Complété</p>
+          <p class="card-progress-text">65% Complété</p>
         </div>
       </div>
 
@@ -92,7 +63,7 @@
 
       <!-- Annales Card -->
       <div class="card course-card" onclick="location.href='annales.html'">
-        <div class="badge" style="background: var(--secondary);">Premium</div>
+        <div class="badge badge-secondary">Premium</div>
         <img src="styles/haltere.jpg" alt="Annales">
         <div>
           <h2>Annales</h2>

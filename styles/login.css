@@ -1,0 +1,63 @@
+/* Login Page Styles */
+
+.login-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    width: auto !important;
+    /* Override default input[type] width 100% if needed */
+}
+
+/* Note: style.css sets width: 100% for all inputs. But wait, style.css targets input[type="text"], input[type="password"] etc specifically.
+   Check style.css Step 8:
+   input[type="text"], input[type="password"], input[type="email"], textarea { width: 100%; ... }
+   It DOES NOT target input[type="checkbox"]. So standard checkbox behavior applies.
+   The inline style was `width: auto;`.
+*/
+.checkbox-input {
+    width: auto;
+}
+
+.link-sm {
+    font-size: 0.9rem;
+}
+
+.login-footer {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.link-bold {
+    font-weight: 600;
+}

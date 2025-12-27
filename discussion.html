@@ -6,72 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discussion - Bidartcours</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .channel-item {
-      padding: 12px;
-      margin-bottom: 8px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--text-muted);
-    }
-
-    .channel-item:hover,
-    .channel-item.active {
-      background: rgba(14, 165, 233, 0.1);
-      color: var(--primary);
-    }
-
-    .channel-item.active {
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/discussion.css">
 </head>
 
 <body>
   <header>
-    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
-    <nav style="display: flex; gap: 20px;">
-      <a href="acceuil.html">Accueil</a>
-      <a href="cours.html">Mes Cours</a>
-      <a href="discussion.html" style="color: white; border-bottom: 2px solid var(--primary);">Discussion</a>
-      <a href="#" style="color: var(--text-muted);">Profil</a>
+    <div class="header-logo">Bidartcours</div>
+    <nav class="header-nav">
+      <a href="acceuil.html" class="nav-link">Accueil</a>
+      <a href="cours.html" class="nav-link">Mes Cours</a>
+      <a href="discussion.html" class="nav-link active">Discussion</a>
+      <a href="#" class="nav-link">Profil</a>
     </nav>
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
-      <div
-        style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-        M</div>
+    <div class="user-profile">
+      <span class="user-name">Mamefatou</span>
+      <div class="user-avatar">M</div>
     </div>
   </header>
 
   <div class="container chat-layout">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Canaux</h3>
+      <h3 class="channel-list-title">Canaux</h3>
       <div class="channel-item active"># Calcul Différentiel</div>
       <div class="channel-item"># Physique Mécanique</div>
       <div class="channel-item"># Informatique 101</div>
       <div class="channel-item"># Général</div>
 
-      <h3 style="margin-top: 30px; margin-bottom: 20px; font-size: 1.2rem;">Professeurs</h3>
-      <div class="channel-item" style="display: flex; align-items: center; gap: 8px;">
-        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e;"></div> Prof. Dupont
+      <h3 class="channel-list-title-secondary">Professeurs</h3>
+      <div class="channel-item prof-item">
+        <div class="status-dot bg-green"></div> Prof. Dupont
       </div>
-      <div class="channel-item" style="display: flex; align-items: center; gap: 8px;">
-        <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted);"></div> Prof. Martin
+      <div class="channel-item prof-item">
+        <div class="status-dot bg-muted"></div> Prof. Martin
       </div>
     </div>
 
     <!-- Chat Area -->
     <div class="chat-area">
-      <div
-        style="padding: 16px 24px; border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center;">
+      <div class="chat-header">
         <div>
-          <h2 style="font-size: 1.2rem; margin: 0;">Calcul Différentiel</h2>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">24 étudiants, 1 professeur en ligne</span>
+          <h2 class="chat-title">Calcul Différentiel</h2>
+          <span class="chat-subtitle">24 étudiants, 1 professeur en ligne</span>
         </div>
-        <div style="color: var(--text-muted); cursor: pointer;">ℹ️</div>
+        <div class="chat-info-btn">ℹ️</div>
       </div>
 
       <div class="messages" id="discussionContainer">
@@ -88,7 +66,7 @@
 
       <div class="chat-input-area">
         <input type="text" id="messageInput" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()" style="padding: 12px 20px;">Envoyer</button>
+        <button onclick="sendMessage()" class="btn btn-send">Envoyer</button>
       </div>
     </div>
   </div>

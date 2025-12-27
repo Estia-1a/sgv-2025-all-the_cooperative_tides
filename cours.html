@@ -6,70 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Cours - Bidartcours</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .progress-container {
-            margin-top: 15px;
-        }
-
-        .progress-text {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-        }
-
-        .progress-bar-bg {
-            background: rgba(255, 255, 255, 0.1);
-            height: 8px;
-            border-radius: 4px;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            border-radius: 4px;
-            transition: width 1s ease-in-out;
-        }
-
-        .course-meta {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/courses.css">
 </head>
 
 <body>
     <header>
-        <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">Bidartcours</div>
-        <nav style="display: flex; gap: 20px;">
-            <a href="acceuil.html">Accueil</a>
-            <a href="cours.html" style="color: white; border-bottom: 2px solid var(--primary);">Mes Cours</a>
-            <a href="discussion.html">Discussion</a>
-            <a href="#" style="color: var(--text-muted);">Profil</a>
+        <div class="header-logo">Bidartcours</div>
+        <nav class="header-nav">
+            <a href="acceuil.html" class="nav-link">Accueil</a>
+            <a href="cours.html" class="nav-link active">Mes Cours</a>
+            <a href="discussion.html" class="nav-link">Discussion</a>
+            <a href="#" class="nav-link">Profil</a>
         </nav>
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="color: white; font-size: 0.9rem;">Mamefatou</span>
-            <div
-                style="width: 32px; height: 32px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                M</div>
+        <div class="user-profile">
+            <span class="user-name">Mamefatou</span>
+            <div class="user-avatar">M</div>
         </div>
     </header>
 
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <div class="page-header">
             <h1>Mes Cours</h1>
-            <div style="background: var(--bg-input); padding: 8px 16px; border-radius: 12px; font-size: 0.9rem;">
+            <div class="search-bar">
                 🔍 Rechercher un cours...
             </div>
         </div>
@@ -79,8 +37,8 @@
             <div class="card course-card" onclick="location.href='cours-details.html'">
                 <img src="styles/bouquins.jpg" alt="Maths">
                 <div>
-                    <h2 style="font-size: 1.4rem;">Mathématiques Avancées</h2>
-                    <p>Prof. Dupont • Semestre 1</p>
+                    <h2 class="course-title-large">Mathématiques Avancées</h2>
+                    <p class="course-info">Prof. Dupont • Semestre 1</p>
 
                     <div class="course-meta">
                         <div class="meta-item">⏱️ 12h restants</div>
@@ -93,12 +51,11 @@
                             <span>65%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 65%; background: var(--primary);"></div>
+                            <div class="progress-bar-fill fill-primary" style="width: 65%;"></div>
                         </div>
                     </div>
 
-                    <button class="btn"
-                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px;">Reprendre</button>
+                    <button class="btn course-card-btn">Reprendre</button>
                 </div>
             </div>
 
@@ -106,8 +63,8 @@
             <div class="card course-card" onclick="location.href='cours-details.html'">
                 <img src="styles/bouquins.jpg" alt="Physique"> <!-- Placeholder img -->
                 <div>
-                    <h2 style="font-size: 1.4rem;">Physique Mécanique</h2>
-                    <p>Prof. Martin • Semestre 1</p>
+                    <h2 class="course-title-large">Physique Mécanique</h2>
+                    <p class="course-info">Prof. Martin • Semestre 1</p>
 
                     <div class="course-meta">
                         <div class="meta-item">⏱️ 4h restants</div>
@@ -120,12 +77,11 @@
                             <span>30%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 30%; background: var(--accent);"></div>
+                            <div class="progress-bar-fill fill-accent" style="width: 30%;"></div>
                         </div>
                     </div>
 
-                    <button class="btn"
-                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px;">Reprendre</button>
+                    <button class="btn course-card-btn">Reprendre</button>
                 </div>
             </div>
 
@@ -133,8 +89,8 @@
             <div class="card course-card" onclick="location.href='cours-details.html'">
                 <img src="styles/ampoule.jpg" alt="Info"> <!-- Placeholder img -->
                 <div>
-                    <h2 style="font-size: 1.4rem;">Introduction Python</h2>
-                    <p>Prof. Alan • Semestre 2</p>
+                    <h2 class="course-title-large">Introduction Python</h2>
+                    <p class="course-info">Prof. Alan • Semestre 2</p>
 
                     <div class="course-meta">
                         <div class="meta-item">⏱️ Débutant</div>
@@ -147,12 +103,11 @@
                             <span>0%</span>
                         </div>
                         <div class="progress-bar-bg">
-                            <div class="progress-bar-fill" style="width: 0%; background: var(--text-muted);"></div>
+                            <div class="progress-bar-fill fill-muted" style="width: 0%;"></div>
                         </div>
                     </div>
 
-                    <button class="btn"
-                        style="width: 100%; margin-top: 20px; font-size: 0.9rem; padding: 10px; background: var(--bg-input);">Commencer</button>
+                    <button class="btn course-card-btn btn-secondary-soft">Commencer</button>
                 </div>
             </div>
         </div>
